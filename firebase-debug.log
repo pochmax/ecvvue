@@ -1,0 +1,42 @@
+[debug] [2022-03-08T08:18:14.816Z] ----------------------------------------------------------------------
+[debug] [2022-03-08T08:18:14.819Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Max\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-03-08T08:18:14.819Z] CLI Version:   10.2.1
+[debug] [2022-03-08T08:18:14.819Z] Platform:      win32
+[debug] [2022-03-08T08:18:14.819Z] Node Version:  v14.17.3
+[debug] [2022-03-08T08:18:14.822Z] Time:          Tue Mar 08 2022 09:18:14 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2022-03-08T08:18:14.822Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-08T08:18:14.826Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-03-08T08:18:14.911Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-08T08:18:14.911Z] > authorizing via signed-in user (maxfra.1305@gmail.com)
+[debug] [2022-03-08T08:18:14.911Z] [iam] checking project ecvvue for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-03-08T08:18:14.912Z] > refreshing access token with scopes: []
+[debug] [2022-03-08T08:18:14.913Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-03-08T08:18:16.567Z] <<< HTTP RESPONSE 200 {"date":"Tue, 08 Mar 2022 08:18:15 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-08T08:18:16.611Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecvvue:testIamPermissions [none]
+[debug] [2022-03-08T08:18:16.611Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecvvue:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-03-08T08:18:16.616Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-03-08T08:18:16.617Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-03-08T08:18:18.316Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecvvue:testIamPermissions 200
+[debug] [2022-03-08T08:18:18.317Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecvvue:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-03-08T08:18:18.320Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue [none]
+[debug] [2022-03-08T08:18:18.759Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue 200
+[debug] [2022-03-08T08:18:18.759Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue {"projectId":"ecvvue","projectNumber":"211808626618","displayName":"ecvvue","name":"projects/ecvvue","resources":{"hostingSite":"ecvvue"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'ecvvue'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-03-08T08:18:18.768Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue [none]
+[debug] [2022-03-08T08:18:19.147Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue 200
+[debug] [2022-03-08T08:18:19.147Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecvvue {"projectId":"ecvvue","projectNumber":"211808626618","displayName":"ecvvue","name":"projects/ecvvue","resources":{"hostingSite":"ecvvue"},"state":"ACTIVE"}
+[debug] [2022-03-08T08:18:19.148Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions [none]
+[debug] [2022-03-08T08:18:19.148Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-03-08T08:18:21.310Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions 200
+[debug] [2022-03-08T08:18:21.311Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions {"name":"projects/211808626618/sites/ecvvue/versions/e871fefbccbda286","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ecvvue]: beginning deploy... 
+[info] i  hosting[ecvvue]: found 11 files in public 
+[debug] [2022-03-08T08:18:21.457Z] [hosting] hash cache [cHVibGlj] stored for 11 files
+[debug] [2022-03-08T08:18:21.458Z] [hosting][hash queue][FINAL] {"max":119,"min":3,"avg":21.272727272727273,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":126}
+[debug] [2022-03-08T08:18:21.458Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions/e871fefbccbda286:populateFiles [none]
+[debug] [2022-03-08T08:18:21.458Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/211808626618/sites/ecvvue/versions/e871fefbccbda286:populateFiles {"files":{"/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","/favicon.ico":"d5451f0f0f0bcbcd433bbdf4f6e7e5d89d8ecce2650649e969ccb5e5cd499ab2","/index.html":"db21aab0f6f50c5fe5c668a21191d61db593b288c8102e9349241c9e35e4d920","/css/home.css":"249f165a25d93517dc9f038229821bb801de51b663f73f96839f6957061d96a4","/ressources/backgroundsvg.svg":"d42cf558971224cd9d1f6fe7408f74fe4b7b387b2e6811e031149b4593f2167b","/ressources/background.svg":"064b9eb1a7be1f5d9821d3339b1f8b995f6ca877ac470971353a91ed4bfc0ff5","/ressources/PhotoPAV.jpg":"5a4e0e43dad7643f722897c883d54e04d8df00ffb90bc28c3e4e75d93768be2a","/ressources/PhotoProfil.jpg":"103b41b86dd6f890a9a1497f7c87aa1c10ed2f7b0cb6ffedae2ee53bbbcff120","/ressources/photoTrombone.jpg":"165cc2503851420371beb2fa6053fdfc72f4317047c6218471f3b4b1c65e6c69","/ressources/photoCompetences.jpg":"f91a14b77a612f6152670c088910efdb82d6666f3bd11fa6f7439176cef60a13","/ressources/cvMaxPochet.pdf":"2945deceece83be9245cb3567b170c1de2c4a2edea1bd45450feba0f9259cf71"}}
