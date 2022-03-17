@@ -1,4 +1,21 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+// import { initializeApp } from "firebase/app";
+// import firebase from "firebase";
+import firebase from "firebase/compat/app"
 
-createApp(App).mount('#app')
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCnT0I-PzhxhzkclVL6z9X6qjnn6sGTHtY",
+  authDomain: "ecvvue.firebaseapp.com",
+  projectId: "ecvvue",
+  storageBucket: "ecvvue.appspot.com",
+  messagingSenderId: "211808626618",
+  appId: "1:211808626618:web:36c455ea14690ef7e6df83",
+  measurementId: "G-HZK9Y0N7LF",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+createApp(App).use(router).mount("#app");

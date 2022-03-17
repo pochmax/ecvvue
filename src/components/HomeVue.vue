@@ -218,16 +218,4 @@
       </div>
     </div>
   </div>
-  <footer>
-    <h2>© 2021 Copyright : Max Pochet</h2>
-  </footer>
 </template>
-
-<script>
-export default {
-  name: "HomeVue",
-  props: {
-    msg: String,
-  },
-};
-</script>
