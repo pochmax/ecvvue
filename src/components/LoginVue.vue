@@ -15,8 +15,8 @@
                 ui = new firebaseui.auth.AuthUI(firebase.auth());
             }
             var uiConfig = {
-                signInSuccessUrl: "/home",
-                signInOptions: [firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                signInSuccessUrl: "/",
+                signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,]
             };
