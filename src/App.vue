@@ -44,14 +44,19 @@
               >Mes projets</router-link
             >
             <router-link
+              v-if="userName == null"
               to="/login"
               class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >Login</router-link
             >
+            <button v-else @click.prevent="signOut">Logout</button>
           </div>
         </div>
         <!-- Secondary Navbar items -->
         <div class="hidden md:flex items-center space-x-3">
+          <p v-if="userName !== null">Bienvenu {{ userName }}</p>
+          <p v-else-if="email !== null">Bienvenu {{ email }}</p>
+          <p v-if="phoneNB !== null">Bienvenu {{ phoneNB }}</p>
           <a
             href="/contact"
             class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
@@ -128,6 +133,7 @@
           });
         </script> -->
   </nav>
+
   <router-view></router-view>
   <footer>
     <h2>© 2021 Copyright : Max Pochet</h2>
@@ -135,9 +141,64 @@
 </template>
 
 <script>
+import firebase from "firebase/compat/app";
+
 export default {
   name: "App",
   components: {},
+
+  data() {
+    return {
+      userName: null,
+      email: null,
+      phoneNB: null,
+    };
+  },
+
+  methods: {
+    authStateListener() {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+
+          const name = user.displayName;
+          const email = user.email;
+          const numberP = user.phoneNumber;
+
+          this.userName = name;
+          this.email = email;
+          this.phoneNB = numberP;
+          // ...
+        } else {
+          console.log("user is signed out");
+        }
+      });
+    },
+
+    signOut() {
+      // [START auth_sign_out]
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.userName = null;
+          this.phoneNB = null;
+          this.email = null;
+          console.log("sign out successfull");
+        })
+        .catch(() => {
+          console.log("an error just happend");
+        });
+      // [END auth_sign_out]
+    },
+  },
+
+  created() {
+    this.authStateListener();
+  },
+
+  computed: {},
 };
 </script>
 

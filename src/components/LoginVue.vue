@@ -15,10 +15,13 @@
                 ui = new firebaseui.auth.AuthUI(firebase.auth());
             }
             var uiConfig = {
+                // signInFlow: 'login',
                 signInSuccessUrl: "/",
-                signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,]
+                signInOptions: [
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.PhoneAuthProvider.PROVIDER_ID
+                ]
             };
             ui.start("#firebaseui-auth-container", uiConfig);
         }

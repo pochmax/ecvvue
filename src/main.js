@@ -3,7 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 // import { initializeApp } from "firebase/app";
 // import firebase from "firebase";
-import firebase from "firebase/compat/app"
+import firebase from "firebase/compat/app";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
@@ -19,3 +20,15 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 createApp(App).use(router).mount("#app");
+
+// const db = getFirestore(firebase.initializeApp(firebaseConfig));
+
+// Get a list of cities from your database
+export async function getProjets(
+  db = getFirestore(firebase.initializeApp(firebaseConfig))
+) {
+  const projetsCol = collection(db, "projets");
+  const projetSnapshot = await getDocs(projetsCol);
+  const projetList = projetSnapshot.docs.map((doc) => doc.data());
+  return projetList;
+}

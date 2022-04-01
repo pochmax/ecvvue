@@ -65,6 +65,13 @@ nav {
   width: 300px;
 }
 
+.connect {
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  width: 800px;
+}
+
 /* Page education */
 
 .education {
