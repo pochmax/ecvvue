@@ -39,16 +39,43 @@
               >Loisirs</a
             >
             <router-link
+              v-if="userName !== null"
               to="/projets"
               class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >Mes projets</router-link
             >
+            <router-link
+              v-else-if="email !== null"
+              to="/projets"
+              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+              >Mes projets</router-link
+            >
+            <router-link
+              v-if="phoneNB !== null"
+              to="/projets"
+              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+              >Mes projets</router-link
+            >
+
             <router-link
               v-if="userName == null"
               to="/login"
               class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >Login</router-link
             >
+            <router-link
+              v-else-if="email == null"
+              to="/login"
+              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+              >Login</router-link
+            >
+            <button v-else @click.prevent="signOut">Logout</button>
+
+            <router-link
+              v-if="phoneNB == null"
+              to="/login"
+              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+            ></router-link>
             <button v-else @click.prevent="signOut">Logout</button>
           </div>
         </div>
