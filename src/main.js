@@ -23,7 +23,7 @@ createApp(App).use(router).mount("#app");
 
 // const db = getFirestore(firebase.initializeApp(firebaseConfig));
 
-// Get a list of cities from your database
+// Get a list of  from your database
 export async function getProjets(
   db = getFirestore(firebase.initializeApp(firebaseConfig))
 ) {

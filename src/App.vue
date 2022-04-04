@@ -39,51 +39,37 @@
               >Loisirs</a
             >
             <router-link
-              v-if="userName !== null"
-              to="/projets"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >Mes projets</router-link
-            >
-            <router-link
-              v-else-if="email !== null"
-              to="/projets"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >Mes projets</router-link
-            >
-            <router-link
-              v-if="phoneNB !== null"
+              v-if="(userName !== null) + (email !== null) + (phoneNB !== null)"
               to="/projets"
               class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
               >Mes projets</router-link
             >
 
-            <router-link
-              v-if="userName == null"
-              to="/login"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >Login</router-link
-            >
-            <router-link
-              v-else-if="email == null"
-              to="/login"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >Login</router-link
-            >
-            <button v-else @click.prevent="signOut">Logout</button>
+            <p v-else>Connectez vous pour voir les projets =></p>
 
             <router-link
-              v-if="phoneNB == null"
+              v-if="(userName == null) & (email == null) & (phoneNB == null)"
               to="/login"
               class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-            ></router-link>
-            <button v-else @click.prevent="signOut">Logout</button>
+              >Login</router-link
+            >
+            <button v-else-if="userName == null" @click.prevent="signOut">
+              Logout
+            </button>
+            <button v-else-if="email == null" @click.prevent="signOut">
+              Logout
+            </button>
+            <button v-else-if="phoneNB == null" @click.prevent="signOut">
+              Logout
+            </button>
+
+            <p v-if="userName !== null">Bienvenu {{ userName }}</p>
+            <p v-else-if="email !== null">Bienvenu {{ email }}</p>
+            <p v-if="phoneNB !== null">Bienvenu {{ phoneNB }}</p>
           </div>
         </div>
         <!-- Secondary Navbar items -->
         <div class="hidden md:flex items-center space-x-3">
-          <p v-if="userName !== null">Bienvenu {{ userName }}</p>
-          <p v-else-if="email !== null">Bienvenu {{ email }}</p>
-          <p v-if="phoneNB !== null">Bienvenu {{ phoneNB }}</p>
           <a
             href="/contact"
             class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
