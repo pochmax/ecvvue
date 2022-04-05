@@ -36,7 +36,7 @@ export default {
   methods: {
     async getValue() {
       this.projetList = await getProjets();
-      console.table(this.projetList);
+      // console.table(this.projetList);
     },
   },
 

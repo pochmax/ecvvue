@@ -65,7 +65,7 @@
 
             <p v-if="userName !== null">Bienvenu {{ userName }}</p>
             <p v-else-if="email !== null">Bienvenu {{ email }}</p>
-            <p v-if="phoneNB !== null">Bienvenu {{ phoneNB }}</p>
+            <p v-if="phoneNB !== null">Bienvenue {{ phoneNB }}</p>
           </div>
         </div>
         <!-- Secondary Navbar items -->
